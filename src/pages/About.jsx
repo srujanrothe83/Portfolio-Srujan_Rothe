@@ -52,7 +52,7 @@ const About = () => {
               y: gsap.utils.random(0, height),
             });
 
-            repeat:-1;
+            drift();
           },
         });
       }
