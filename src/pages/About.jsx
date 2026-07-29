@@ -52,7 +52,7 @@ const About = () => {
               y: gsap.utils.random(0, height),
             });
 
-            drift(); // Start again
+            repeat:-1;
           },
         });
       }
@@ -70,7 +70,7 @@ const About = () => {
 
     });
 
-  });
+  },[]);
 
 
 
@@ -192,29 +192,30 @@ const About = () => {
   return (
 
     <>
-      <div id='cont-about' ref={aboutPage} className=''>
-        {particles}
+      <div id='cont-about' ref={aboutPage} className='overflow-x-hidden overflow-y-hidden'>
+
         <img src={Character} alt="Character Image" className='z-[99999] image2 h-160 lg:block hidden absolute right-10' />
-        {particles}
-        <div className='lg:w-[70vw] w-screen flex justify-start flex-col lg:pl-20 items-center h-screen lg:pt-13 pt-20'>
+        <div className='hidden lg:block'>
+            {particles}
+          </div>
+        <div className='lg:w-[70vw] w-full flex justify-start flex-col lg:pl-20 items-center h-screen lg:pt-13 pt-20'>
           <h1 ref={heading1Ref} className='heading1 Big text-amber-200 lg:text-7xl text-6xl font-bold lg:mr-50 mb-4'>WHO AM I</h1>
-          {particles}
-          <div className='px-10'>{particles}
+          
+          <div className='px-10'>
             <h2 className='text-white Poppins' ref={Para1Ref}>Hi, I'm Srujan Rothe.</h2>
             <p className='small' ref={Para2Ref}>A third-year Information Technology student and a self-taught Frontend Developer from India. I'm passionate about turning ideas into clean, responsive, and interactive web experiences.</p>
-            {particles}
+            
             <h1 ref={heading2Ref} className='heading1  text-amber-200 lg:text-5xl text-4xl font-bold mt-10 lg:ml-27 ml-13 mb-3'>What I Do</h1>
             <p ref={Para3Ref} className='small'>I build modern websites using technologies like React, JavaScript, Tailwind CSS, and GSAP, with a strong focus on smooth animations, intuitive user experiences, and clean design.</p>
 
             <h1 ref={heading3Ref} className='heading1  text-amber-200 lg:text-5xl text-4xl font-bold mt-10 lg:ml-27 ml-13 mb-3 hidden lg:block'>Beyond the Code</h1>
             <p ref={Para4Ref} className='small hidden lg:block'>I'm constantly learning, experimenting, and refining my skills through personal projects. Every project is an opportunity to create something better than the last, blending creativity with functionality to build experiences that leave a lasting impression.</p>
-            {particles}
+            
             <div className='flex gap-3 pt-6 lg:pl-30'>
               <button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>Resume <img className='hidden lg:block h-7 w-fit' src={CV} alt="" /></button>
 
               <button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>Linked In <img className='hidden lg:block h-7 w-fit' src={LinkedIn} alt="" /></button>
-              {particles}
-              <button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>GitHub <img className='hidden lg:block h-7 w-fit' src={Github} alt="" /></button>{particles}
+              <button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>GitHub <img className='hidden lg:block h-7 w-fit' src={Github} alt="" /></button>
             </div>
           </div>
 

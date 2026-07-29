@@ -44,7 +44,7 @@ const Homepage = () => {
               y: gsap.utils.random(0, height),
             });
 
-            drift(); // Start again
+            repeat:-1
           },
         });
       }
@@ -62,7 +62,7 @@ const Homepage = () => {
 
     });
 
-  });
+  }, []);
 
   useGSAP(() => {
     tl1.current = gsap.timeline({
@@ -168,34 +168,38 @@ const Homepage = () => {
 
   return (
     <>
-      <div className='max-h-[100.0001vh]' ref={homePage}>
+      <div className='max-h-[100vh] overflow-x-hidden overflow-y-hidden' ref={homePage}>
         <div id='temp-cont'>
+          <div className='hidden lg:block'>
+            {particles}
+          </div>
           <div className="menu fixed lg:top-6 top-3 left-3 lg:left-6 z-[99999]">
             <button className='cursor-pointer z-[9999999]' onClick={menuAnimation}>
               {menu ? <X size={32} color="#978c44" /> : <Tally2 size={32} color="#978c44" />}
             </button>
-          </div>{particles}
+          </div>
 
           <div id="menu" className='menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[99999] lg:top-18 top-11 left-10 rounded-2xl flex justify-start items-center flex-col py-10 px-5 gap-4'>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Home</Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Who Am I? </Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Projects</Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Contact</Link>
-          </div>{particles}
+          </div>
+          
 
-          <div className='h-full flex flex-col justify-center items-center pt-10 lg:pt-0'>{particles}
-            <div className='headings heading1  flex justify-between gap-1 lg:w-216 lg:ml-10'>{particles}
+          <div className='h-full flex flex-col justify-center items-center pt-10 lg:pt-0'>
+            <div className='headings heading1  flex justify-between gap-1 lg:w-216 lg:ml-10'>
               <span className='span1 lg:text-9xl text-5xl font-semibold text-amber-200'>PORT</span>
               <span className='span2 lg:text-9xl text-5xl font-semibold text-amber-200'>FOLIO</span>
-            </div>{particles}
+            </div>
             <div className='headings lg:tracking-[24px] tracking-[16px] ml-3 lg:ml-3 
                 flex lg:gap-32 gap-3 text-amber-50'>
-              <span className='span1'>SRUJAN</span>{particles}
+              <span className='span1'>SRUJAN</span>
               <span className='span2'>ROTHE</span>
             </div>
-            <div className='lg:absolute'>{particles}
+            <div className='lg:absolute'>
               <img src={CharacterIMG} alt="CharacterIMG" className='z-[9999999] image w-70 mt-2 drop-shadow-2xl' />
-            </div>{particles}
+            </div>
           </div>
 
           <div className='scroll-div w-full flex justify-center absolute bottom-5'>
