@@ -28,49 +28,44 @@ const About = () => {
     />
   ));
   useGSAP(() => {
+  const width = aboutPage.current.offsetWidth;
+  const height = aboutPage.current.offsetHeight;
 
-    gsap.utils.toArray(".particle").forEach((particle) => {
-
-      const width = aboutPage.current.offsetWidth;
-      const height = aboutPage.current.offsetHeight;
-
+  gsap.utils.toArray(".particle").forEach((particle) => {
+    function drift() {
       gsap.set(particle, {
-        x: gsap.utils.random(-100, width),
+        x: -50,
         y: gsap.utils.random(0, height),
       });
-
-      function drift() {
-        gsap.to(particle, {
-          x: width + 50,
-          y: `+=${gsap.utils.random(-15, 15)}`,
-          duration: gsap.utils.random(12, 20),
-          ease: "none",
-
-          onComplete: () => {
-            gsap.set(particle, {
-              x: -50,
-              y: gsap.utils.random(0, height),
-            });
-
-            drift();
-          },
-        });
-      }
-
-      drift();
-
       gsap.to(particle, {
-        opacity: gsap.utils.random(0.1, 0.35),
-        scale: gsap.utils.random(0.8, 1.4),
-        duration: gsap.utils.random(2, 4),
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+        x: width + 50,
+        y: `+=${gsap.utils.random(-20, 20)}`,
+        duration: gsap.utils.random(12, 20),
+        ease: "none",
+        onComplete: drift,
       });
-
+    }
+    gsap.set(particle, {
+      x: gsap.utils.random(-50, width),
+      y: gsap.utils.random(0, height),
     });
-
-  },[]);
+    gsap.to(particle, {
+      x: width + 50,
+      y: `+=${gsap.utils.random(-20, 20)}`,
+      duration: gsap.utils.random(5, 15),
+      ease: "none",
+      onComplete: drift,
+    });
+    gsap.to(particle, {
+      opacity: gsap.utils.random(0.15, 0.35),
+      scale: gsap.utils.random(0.8, 1.4),
+      duration: gsap.utils.random(2, 4),
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  });
+}, { scope: aboutPage });
 
 
 
@@ -192,13 +187,13 @@ const About = () => {
   return (
 
     <>
-      <div id='cont-about' ref={aboutPage} className='overflow-x-hidden overflow-y-hidden'>
+      <div id='cont-about' ref={aboutPage} className='lg:h-screen h-auto overflow-x-hidden overflow-y-hidden'>
 
         <img src={Character} alt="Character Image" className='z-[99999] image2 h-160 lg:block hidden absolute right-10' />
         <div className='hidden lg:block'>
             {particles}
           </div>
-        <div className='lg:w-[70vw] w-full flex justify-start flex-col lg:pl-20 items-center h-screen lg:pt-13 pt-20'>
+        <div className='lg:w-[70vw] w-full flex justify-start flex-col lg:pl-20 items-center h-auto lg:mb-0 mb-5 lg:pt-13 pt-20'>
           <h1 ref={heading1Ref} className='heading1 Big text-amber-200 lg:text-7xl text-6xl font-bold lg:mr-50 mb-4'>WHO AM I</h1>
           
           <div className='px-10'>

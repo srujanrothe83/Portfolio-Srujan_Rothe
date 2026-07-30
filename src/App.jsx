@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import { useEffect } from 'react'
 import About from './pages/About'
+import Skills from './pages/Skills'
 
 const App = () => {
   useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
     <div className="cursor z-[99.9] pointer-events-none h-5 w-5 fixed  rounded-full md:block hidden"></div>
     <Homepage />
     <About />
+    <Skills />
 
     </>
   )

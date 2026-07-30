@@ -24,6 +24,11 @@ html,body{
   font-size: 1.01rem;    
   font-weight: 500;
 }
+.small1{
+  color: #63d8ff;        
+  font-size: 1.7em;    
+  font-weight: 500;
+}
 
 
 .scroll{
@@ -52,6 +57,17 @@ html,body{
     #01141b 0%,
     #08232f 40%,
     #103848 100%
+);
+}
+#cont-skills {
+  min-height: 100vh;
+  width: 100vw;
+  /* background: linear-gradient(135deg, #154555, #01141b); */
+  background: linear-gradient(
+    180deg,
+     #103848 0%,
+    #08232f 40%,
+     #01141b 100%
 );
 }
 .Link{

@@ -20,49 +20,44 @@ const Homepage = () => {
   ));
 
   useGSAP(() => {
+  const width = homePage.current.offsetWidth;
+  const height = homePage.current.offsetHeight;
 
-    gsap.utils.toArray(".particle").forEach((particle) => {
-
-      const width = homePage.current.offsetWidth;
-      const height = homePage.current.offsetHeight;
-
+  gsap.utils.toArray(".particle").forEach((particle) => {
+    function drift() {
       gsap.set(particle, {
-        x: gsap.utils.random(-100, width),
+        x: -50,
         y: gsap.utils.random(0, height),
       });
-
-      function drift() {
-        gsap.to(particle, {
-          x: width + 50,
-          y: `+=${gsap.utils.random(-15, 15)}`,
-          duration: gsap.utils.random(12, 20),
-          ease: "none",
-
-          onComplete: () => {
-            gsap.set(particle, {
-              x: -50,
-              y: gsap.utils.random(0, height),
-            });
-
-            drift();
-          },
-        });
-      }
-
-      drift();
-
       gsap.to(particle, {
-        opacity: gsap.utils.random(0.1, 0.35),
-        scale: gsap.utils.random(0.8, 1.4),
-        duration: gsap.utils.random(2, 4),
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
+        x: width + 50,
+        y: `+=${gsap.utils.random(-20, 20)}`,
+        duration: gsap.utils.random(12, 20),
+        ease: "none",
+        onComplete: drift,
       });
-
+    }
+    gsap.set(particle, {
+      x: gsap.utils.random(-50, width),
+      y: gsap.utils.random(0, height),
     });
-
-  }, []);
+    gsap.to(particle, {
+      x: width + 50,
+      y: `+=${gsap.utils.random(-20, 20)}`,
+      duration: gsap.utils.random(5, 15),
+      ease: "none",
+      onComplete: drift,
+    });
+    gsap.to(particle, {
+      opacity: gsap.utils.random(0.15, 0.35),
+      scale: gsap.utils.random(0.8, 1.4),
+      duration: gsap.utils.random(2, 4),
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  });
+}, { scope: homePage });
 
   useGSAP(() => {
     tl1.current = gsap.timeline({
@@ -172,13 +167,13 @@ const Homepage = () => {
           <div className='hidden lg:block'>
             {particles}
           </div>
-          <div className="menu fixed lg:top-6 top-3 left-3 lg:left-6 z-[99999]">
-            <button className='cursor-pointer z-[9999999]' onClick={menuAnimation}>
+          <div className="menu fixed lg:top-6 top-3 left-3 lg:left-6 z-[999]">
+            <button className='cursor-pointer z-[9999]' onClick={menuAnimation}>
               {menu ? <X size={32} color="#978c44" /> : <Tally2 size={32} color="#978c44" />}
             </button>
           </div>
 
-          <div id="menu" className='bg-yellow-400/10 backdrop-blur-xl border border-yellow-300/20  rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,193,7,0.12)] menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[99999] lg:top-18 top-11 left-10 flex justify-start items-center flex-col py-10 px-5 gap-4'>
+          <div id="menu" className='bg-yellow-400/10 backdrop-blur-xl border border-yellow-300/20  rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,193,7,0.12)] menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[9999] lg:top-18 top-11 left-10 flex justify-start items-center flex-col py-10 px-5 gap-4'>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Home</Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Who Am I? </Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Projects</Link>
