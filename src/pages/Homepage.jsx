@@ -99,7 +99,6 @@ const Homepage = () => {
 
   function menuAnimation() {
     setmenu(!menu)
-
   }
   useEffect(() => {
 
@@ -179,13 +178,13 @@ const Homepage = () => {
             </button>
           </div>
 
-          <div id="menu" className='menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[99999] lg:top-18 top-11 left-10 rounded-2xl flex justify-start items-center flex-col py-10 px-5 gap-4'>
+          <div id="menu" className='bg-yellow-400/10 backdrop-blur-xl border border-yellow-300/20  rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,193,7,0.12)] menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[99999] lg:top-18 top-11 left-10 flex justify-start items-center flex-col py-10 px-5 gap-4'>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Home</Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Who Am I? </Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Projects</Link>
             <Link to={"/"} className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl'>Contact</Link>
           </div>
-          
+
 
           <div className='h-full flex flex-col justify-center items-center pt-10 lg:pt-0'>
             <div className='headings heading1  flex justify-between gap-1 lg:w-216 lg:ml-10'>
