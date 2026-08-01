@@ -21,10 +21,10 @@ const About = () => {
   const Para3Ref = useRef()
   const Para4Ref = useRef()
 
-  const particles = Array.from({ length: 20 }, (_, i) => (
+    const particles = Array.from({ length: 20 }, (_, i) => (
         <div
             key={i}
-            className="particle absolute rounded-full pointer-events-none max-w-full overflow-x-hidden"
+            className="particle absolute rounded-full pointer-events-none "
         />
     ));
   useGSAP(() => {
@@ -190,7 +190,7 @@ const About = () => {
       <div id='cont-about' ref={aboutPage} className='lg:h-screen h-auto overflow-x-hidden overflow-y-hidden'>
 
         <img src={Character} alt="Character Image" className='z-[99999] image2 h-160 lg:block hidden absolute right-10' />
-        <div className=''>
+        <div className='hidden lg:block'>
             {particles}
           </div>
         

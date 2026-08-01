@@ -18,10 +18,10 @@ const Homepage = ({ refs }) => {
     });
   };
 
-  const particles = Array.from({ length: 20 }, (_, i) => (
+    const particles = Array.from({ length: 20 }, (_, i) => (
         <div
             key={i}
-            className="particle absolute rounded-full pointer-events-none max-w-full overflow-x-hidden"
+            className="particle absolute rounded-full pointer-events-none "
         />
     ));
 
@@ -170,7 +170,7 @@ const Homepage = ({ refs }) => {
     <>
       <div className='max-h-[100vh] overflow-x-hidden overflow-y-hidden' ref={homePage}>
         <div id='temp-cont'>
-          <div className=''>
+          <div className='hidden lg:block'>
             {particles}
           </div>
           
