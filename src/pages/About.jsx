@@ -22,11 +22,11 @@ const About = () => {
   const Para4Ref = useRef()
 
   const particles = Array.from({ length: 20 }, (_, i) => (
-    <div
-      key={i}
-      className="particle absolute rounded-full pointer-events-none"
-    />
-  ));
+        <div
+            key={i}
+            className="particle absolute rounded-full pointer-events-none max-w-full overflow-x-hidden"
+        />
+    ));
   useGSAP(() => {
   const width = aboutPage.current.offsetWidth;
   const height = aboutPage.current.offsetHeight;
@@ -190,9 +190,10 @@ const About = () => {
       <div id='cont-about' ref={aboutPage} className='lg:h-screen h-auto overflow-x-hidden overflow-y-hidden'>
 
         <img src={Character} alt="Character Image" className='z-[99999] image2 h-160 lg:block hidden absolute right-10' />
-        <div className='hidden lg:block'>
+        <div className=''>
             {particles}
           </div>
+        
         <div className='lg:w-[70vw] w-full flex justify-start flex-col lg:pl-20 items-center h-auto lg:mb-0 mb-5 lg:pt-13 pt-20'>
           <h1 ref={heading1Ref} className='heading1 Big text-amber-200 lg:text-7xl text-6xl font-bold lg:mr-50 mb-4'>WHO AM I</h1>
           

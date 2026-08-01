@@ -27,7 +27,7 @@ const Skills = () => {
     const particles = Array.from({ length: 20 }, (_, i) => (
         <div
             key={i}
-            className="particle absolute rounded-full pointer-events-none"
+            className="particle absolute rounded-full pointer-events-none max-w-full overflow-x-hidden"
         />
     ));
     useGSAP(() => {
@@ -142,9 +142,10 @@ const Skills = () => {
 
     return (
         <div id='cont-skills' ref={skillPage}>
-            <div className='hidden lg:block'>
+            <div className=''>
                 {particles}
             </div>
+           
             <div className='w-full h-full  lg:py-25 py-15 px-20 flex justify-start flex-col items-center'>
                 <h1 className='heading1 Skills Big text-amber-200 lg:text-7xl text-6xl font-bold mb-10'>Skills</h1>
                 <div className='w-full flex gap-5 lg:gap-0 flex-wrap items-center '>

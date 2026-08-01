@@ -19,11 +19,11 @@ const Homepage = ({ refs }) => {
   };
 
   const particles = Array.from({ length: 20 }, (_, i) => (
-    <div
-      key={i}
-      className="particle absolute rounded-full pointer-events-none"
-    />
-  ));
+        <div
+            key={i}
+            className="particle absolute rounded-full pointer-events-none max-w-full overflow-x-hidden"
+        />
+    ));
 
   useGSAP(() => {
   const width = homePage.current.offsetWidth;
@@ -170,9 +170,10 @@ const Homepage = ({ refs }) => {
     <>
       <div className='max-h-[100vh] overflow-x-hidden overflow-y-hidden' ref={homePage}>
         <div id='temp-cont'>
-          <div className='hidden lg:block'>
+          <div className=''>
             {particles}
           </div>
+          
           <div className="menu fixed lg:top-6 top-3 left-3 lg:left-6 z-[999]">
             <button className='cursor-pointer z-[9999]' onClick={menuAnimation}>
               {menu ? <X size={32} color="#978c44" /> : <Tally2 size={32} color="#978c44" />}
