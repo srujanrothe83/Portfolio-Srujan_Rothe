@@ -6,11 +6,13 @@ import Homepage from './pages/Homepage'
 import { useEffect } from 'react'
 import About from './pages/About'
 import Skills from './pages/Skills'
+import Projects from './pages/Projects'
 
 const App = () => {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
   useEffect(() => {
 
     window.addEventListener("mousemove", (e) => {
@@ -34,6 +36,10 @@ const App = () => {
     <div ref={skillsRef}>
 
     <Skills />
+    </div>
+    <div ref={projectsRef}>
+
+    <Projects />
     </div>
 
     </>

@@ -191,6 +191,9 @@ const Homepage = ({ refs }) => {
             <button className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl' onClick={() => {
               menuAnimation()
                scrollTo(refs.skillsRef)}}>Skills</button>
+            <button className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl' onClick={() => {
+              menuAnimation()
+               scrollTo(refs.projectsRef)}}>Projects</button>
            </div>
 
 
