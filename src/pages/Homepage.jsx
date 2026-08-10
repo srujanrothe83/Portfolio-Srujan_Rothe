@@ -66,20 +66,28 @@ const Homepage = ({ refs }) => {
 }, { scope: homePage });
 
   useGSAP(() => {
-    tl1.current = gsap.timeline({
-      paused: true
-    })
+  tl1.current = gsap.timeline({
+    paused: true,
+  });
 
-    tl1.current.from('#menu', {
-      x: -100,
-      opacity: 0,
-      duration: 0.4,
-      ease: "back.out"
-    })
-    tl1.current.fromTo(
+  tl1.current
+    .fromTo(
+      "#menu",
+      {
+        x: -500,
+        autoAlpha: 0,
+      },
+      {
+        x: 0,
+        autoAlpha: 1,
+        duration: 0.5,
+        ease: "power3.out",
+      }
+    )
+    .fromTo(
       ".Link",
       {
-        y: -40,
+        y: -30,
         opacity: 0,
         rotation: -6,
       },
@@ -87,19 +95,28 @@ const Homepage = ({ refs }) => {
         y: 0,
         opacity: 1,
         rotation: 0,
-        duration: 0.55,
+        duration: 0.45,
         ease: "back.out(1.7)",
-        stagger: {
-          each: 0.08,
-          from: "start",
-        },
+        stagger: 0.08,
       },
-      "-=0.15"
+      "-=0.2"
     );
-  }, [])
+}, []);
+
+function menuAnimation() {
+  setmenu(prev => !prev);
+}
+
+useEffect(() => {
+  if (!tl1.current) return;
+
+  menu
+    ? tl1.current.play()
+    : tl1.current.reverse();
+}, [menu]);
 
   function menuAnimation() {
-    setmenu(!menu)
+    setmenu(prev => !prev)
   }
   useEffect(() => {
 
@@ -180,7 +197,7 @@ const Homepage = ({ refs }) => {
             </button>
           </div>
 
-          <div id="menu" className='bg-yellow-400/10 backdrop-blur-xl border border-yellow-300/20  rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,193,7,0.12)] menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-[9999] lg:top-18 top-11 left-10 flex justify-start items-center flex-col py-10 px-5 gap-4'>
+          <div id="menu" className='bg-yellow-400/10 backdrop-blur-xl border border-yellow-300/20  rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,193,7,0.12)] menu-div lg:h-120 h-90 fixed lg:w-100 w-[70%] z-99999 lg:top-18 top-11 left-10 flex justify-start items-center flex-col py-10 px-5 gap-4'>
             <button className='Link h-fit w-full px-10 py-4 rounded-4xl text-xl' onClick={() => {
               menuAnimation()
               scrollTo(refs.homeRef)}}>Home</button>

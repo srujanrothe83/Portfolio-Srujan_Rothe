@@ -107,8 +107,8 @@ const Skills = () => {
 
         tl.from(".Skills",{
             opacity:0,
-            duration:0.6,
-            y:40
+            duration:0.8,
+            x:90
         })
         .from(".small1",{
             opacity:0,
@@ -151,7 +151,7 @@ const Skills = () => {
                 <div className='w-full flex gap-5 lg:gap-0 flex-wrap items-center '>
                     <div className='lg:w-1/2  flex justify-center flex-col items-center  '>
                         <h2 className='small1 mb-5'>Languages</h2>
-                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-[99999]'>
+                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
                             {skills1.map((skill) => (
                                 <button
                                     key={skill.name}
@@ -172,7 +172,7 @@ const Skills = () => {
 
                     <div className='lg:w-1/2 w-screen  flex justify-center flex-col items-center '>
                         <h2 className='small1 mb-5'>FrontEnd</h2>
-                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-[99999]'>
+                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
                             {skills2.map((skill) => (
                                 <button
                                     key={skill.name}
@@ -193,7 +193,7 @@ const Skills = () => {
 
                     <div className='lg:w-1/2  flex justify-center flex-col items-center lg:mt-12'>
                         <h2 className='small1 mb-5'>Tools</h2>
-                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-[99999]'>
+                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
                             {skills3.map((skill) => (
                                 <button
                                     key={skill.name}
@@ -213,7 +213,7 @@ const Skills = () => {
                     </div>
                     <div className='lg:w-1/2  flex justify-center flex-col items-center lg:mt-12'>
                         <h2 className='small1 mb-5'>Still Learning</h2>
-                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-[99999]'>
+                        <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
                             {skills4.map((skill) => (
                                 <button
                                     key={skill.name}
@@ -234,6 +234,7 @@ const Skills = () => {
                 </div>
 
             </div>
+            
 
         </div>
     )

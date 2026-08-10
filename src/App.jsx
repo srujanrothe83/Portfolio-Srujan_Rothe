@@ -28,7 +28,7 @@ const App = () => {
     <>
     <div className="cursor z-[99.9] pointer-events-none h-5 w-5 fixed  rounded-full md:block hidden"></div>
     <div ref={homeRef}>
-    <Homepage  refs={{homeRef,aboutRef,skillsRef}}/>
+    <Homepage  refs={{homeRef,aboutRef,skillsRef,projectsRef}}/>
     </div>
     <div ref={aboutRef}>
       <About />
