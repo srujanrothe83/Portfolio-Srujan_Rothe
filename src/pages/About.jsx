@@ -208,7 +208,7 @@ const About = () => {
             <p ref={Para4Ref} className='small hidden lg:block'>I'm constantly learning, experimenting, and refining my skills through personal projects. Every project is an opportunity to create something better than the last, blending creativity with functionality to build experiences that leave a lasting impression.</p>
             
             <div className='flex gap-3 pt-6 lg:pl-30'>
-              <a href="" target='_blank'><button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>Resume <img className='hidden lg:block h-7 w-fit' src={CV} alt="" /></button></a>
+              <a href="https://drive.google.com/file/d/1tsuKqzL18W73-bLotNKRqVAp89G9KTI_/view?usp=sharing" target='_blank'><button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>Resume <img className='hidden lg:block h-7 w-fit' src={CV} alt="" /></button></a>
 
               <a href="https://www.linkedin.com/in/srujan-rothe-59301a350/" target='_blank'><button className='cursor-pointer btn py-2 flex gap-2 items-center px-4 border rounded-2xl text-[#93d9fa]'>Linked In <img className='hidden lg:block h-7 w-fit' src={LinkedIn} alt="" /></button></a>
 
