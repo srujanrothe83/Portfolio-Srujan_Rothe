@@ -129,7 +129,7 @@ const Projects = () => {
             <div className='box w-80 h-fit flex flex-col justify-center items-center'>
               <a href="https://ai-virtual-assistant-frontend-8168.onrender.com/" className='flex flex-col items-center justify-center'>
                 <img src={AI_Virtual_Assistant} className='w-50 rounded-3xl' />
-                <h2 className='small my-1'>AI_Virtual Assistant | MERN</h2>
+                <h2 className='small my-1'>AI Virtual Assistant | MERN</h2>
               </a>
             </div>
             
