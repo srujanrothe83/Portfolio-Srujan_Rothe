@@ -16,7 +16,6 @@ import Vercel from '../assets/Vercel.png'
 import Vite from '../assets/Vite.png'
 import Express from '../assets/Express.png'
 import MongoDB from '../assets/MongoDB.png'
-import Next from '../assets/Next.png'
 import Node from '../assets/Node.png'
 import TS from '../assets/TypeScript.png'
 
@@ -72,6 +71,7 @@ const Skills = () => {
 
     const skills1 = [
         { name: "JavaScript", icon: JS },
+        { name: "TypeScript", icon: TS },
         { name: "HTML", icon: html },
         { name: "CSS", icon: css },
         { name: "python", icon: python },
@@ -92,9 +92,7 @@ const Skills = () => {
     const skills4 = [
         { name: "Express", icon: Express },
         { name: "MongoDB", icon: MongoDB },
-        { name: "Next", icon: Next },
         { name: "Node", icon: Node },
-        { name: "TypeScript", icon: TS },
     ]
 
     useGSAP(() => {
@@ -191,10 +189,11 @@ const Skills = () => {
                         </div>
                     </div>
 
+                    
                     <div className='lg:w-1/2  flex justify-center flex-col items-center lg:mt-12'>
-                        <h2 className='small1 mb-5'>Tools</h2>
+                        <h2 className='small1 mb-5'>Backend</h2>
                         <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
-                            {skills3.map((skill) => (
+                            {skills4.map((skill) => (
                                 <button
                                     key={skill.name}
                                     className="icon group relative rounded-full bg-zinc-900 p-4"
@@ -212,9 +211,9 @@ const Skills = () => {
                         </div>
                     </div>
                     <div className='lg:w-1/2  flex justify-center flex-col items-center lg:mt-12'>
-                        <h2 className='small1 mb-5'>Still Learning</h2>
+                        <h2 className='small1 mb-5'>Tools</h2>
                         <div className='flex gap-4 flex-wrap justify-center lg:mx-10 z-999'>
-                            {skills4.map((skill) => (
+                            {skills3.map((skill) => (
                                 <button
                                     key={skill.name}
                                     className="icon group relative rounded-full bg-zinc-900 p-4"
