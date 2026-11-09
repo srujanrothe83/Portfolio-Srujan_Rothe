@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Character from '../assets/ProjectsPNG.png'
+import AI_Virtual_Assistant from '../assets/AI_Virtual_Assistant.png'
 import Ecommerce from '../assets/Projects/E-Commerce.png'
 import SmartHealth from '../assets/Projects/SmartHealth.png'
 import Chatbox from '../assets/Projects/AI_Chatbox.png'
@@ -125,6 +126,13 @@ const Projects = () => {
               {particles}
             </div>
 
+            <div className='box w-80 h-fit flex flex-col justify-center items-center'>
+              <a href="https://ai-virtual-assistant-frontend-8168.onrender.com/" className='flex flex-col items-center justify-center'>
+                <img src={AI_Virtual_Assistant} className='w-50 rounded-3xl' />
+                <h2 className='small my-1'>AI_Virtual Assistant | MERN</h2>
+              </a>
+            </div>
+            
             <div className='box w-80 h-fit flex flex-col justify-center items-center'>
               <a href="https://e-commerce-website-srujan-rothe.vercel.app/" className='flex flex-col items-center justify-center'>
                 <img src={Ecommerce} className='w-50 rounded-3xl' />
